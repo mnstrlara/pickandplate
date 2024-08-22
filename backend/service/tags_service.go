@@ -10,6 +10,5 @@ type TagsService interface {
 	Update(tags request.UpdateTagsRequest)
 	Delete(tagsId int)
 	FindById(tagsId int) response.TagsResponse
-	FindAll() []response.TagsResponse	
+	FindAll() []response.TagsResponse
 }
-
