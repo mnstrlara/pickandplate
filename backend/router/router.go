@@ -17,8 +17,9 @@ func NewRouter(tagController *controller.TagController) *gin.Engine {
 		c.JSON(404, gin.H{"code": "PAGE_NOT_FOUND", "message": "Page not found"})
 	})
 
-	router := service.Group("/api")
-	tagRouter := router.Group("/tag")
+	v1 := service.Group("/api/v1")
+
+	tagRouter := v1.Group("/tag")
 	tagRouter.GET("", tagController.FindAll)
 	tagRouter.GET("/:tagId", tagController.FindById)
 	tagRouter.POST("", tagController.Create)
