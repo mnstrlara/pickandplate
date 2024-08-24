@@ -14,6 +14,23 @@ import (
 type TagController struct {
 	tagService service.TagsService
 }
+// @title Pick and Plate API
+// @version 1.0
+// @description This is the API for Pick and Plate
+// @host localhost:8000
+// @BasePath /api/v1
+
+// @tag.name Tags
+// @tag.description Tag management
+
+// FindAll godoc
+// @Summary Get all tags
+// @Description Get a list of all tags
+// @Tags Tags
+// @Accept json
+// @Produce json
+// @Success 200 {array} model.Tags
+// @Router /tag [get]
 
 func NewTagController(service service.TagsService) *TagController {
 	return &TagController{tagService: service}
